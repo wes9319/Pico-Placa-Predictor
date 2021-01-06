@@ -1,0 +1,23 @@
+{
+  "name": "pico-placa-predictor",
+  "version": "1.0.0",
+  "description": "Proyect to predict pico & placa car capacity to be on the road",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wes9319/Pico-Placa-Predictor.git"
+  },
+  "keywords": [
+    "javascript",
+    "pico&placa"
+  ],
+  "author": "Elvis W. Vasquez <wes9319_rhcp@hotmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wes9319/Pico-Placa-Predictor/issues"
+  },
+  "homepage": "https://github.com/wes9319/Pico-Placa-Predictor#readme"
+}

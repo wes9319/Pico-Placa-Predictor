@@ -12,7 +12,7 @@ For this example pico y placa runs like the one before the pandemic outbreak at 
 - Friday - 9,10 can't drive
 - Saturday & Sunday - all plates can drive
 
-The restriction each weekday runs from 5am to 20pm
+The restriction each weekday runs 7:00am - 9:30am / 16:00pm - 19:30
 
 ### Inputs:
 

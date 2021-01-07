@@ -4,7 +4,7 @@
   "description": "Proyect to predict pico & placa car capacity to be on the road",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/wes9319/Pico-Placa-Predictor/issues"
   },
-  "homepage": "https://github.com/wes9319/Pico-Placa-Predictor#readme"
+  "homepage": "https://github.com/wes9319/Pico-Placa-Predictor#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-jest": "^26.6.3",
+    "babel-polyfill": "^6.26.0",
+    "jest": "^26.6.3"
+  }
 }

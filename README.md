@@ -18,7 +18,7 @@ The restriction each weekday runs from 5am to 20pm
 
 * `plate` (string) - Example: 'PCF-1728'
 * `date` (string) - Example: 'January 6,2021'
-* `time` (int) - Example: 10
+* `time` (string) - Example: '9:30'
 
 ### Output:
 

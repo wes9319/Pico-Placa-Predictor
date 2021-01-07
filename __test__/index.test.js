@@ -8,14 +8,14 @@ beforeEach(() => {
 
 describe('Pico & placa Predictor Testing', ()=>{
     test('Check if the class constructor is been called', () => {
-        const canIDrive = new Predictor('PCF-1728', 'November 11,2020', 12);
+        const canIDrive = new Predictor('PCF-1728', 'November 11,2020', '12:00');
         expect(Predictor).toHaveBeenCalledTimes(1);
     });
 
     test('Check if predict method is been called', () => {
         expect(Predictor).not.toHaveBeenCalled();
       
-        const canIDrive = new Predictor('PCF-1728', 'November 11,2020', 12);
+        const canIDrive = new Predictor('PCF-1728', 'November 11,2020', '12:00');
         expect(Predictor).toHaveBeenCalledTimes(1);
         canIDrive.predict();
         

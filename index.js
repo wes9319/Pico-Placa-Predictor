@@ -20,6 +20,12 @@ class Predictor {
             'saturday', 
             'sunday',
         ];
+        this.restrictHours = [
+            [7,0],//starts morning
+            [9,30],//ends morning
+            [16,0],//starts afternoon
+            [19,30],//ends afternoon
+        ];
         this.inputDay = '';
         this.lastDigit = '';
         this.dontDriveDay = '';     
@@ -30,16 +36,21 @@ class Predictor {
 
         if (!this.plate || !this.date || !this.time) { valid = false }
 
-        if (this.time < 0 || this.time > 24) { valid = false}
+        if (!typeof time === 'string') { valid = false}
 
         return valid;
     }
         
     predict () {
         let result;
+        let hour;
+        let minutes;
         if(this.validate()){
             this.inputDay = this.weekday[this.date.getDay()];
             this.lastDigit = this.plate.split("").pop();
+            this.time = this.time.split(':');
+            hour = Number(this.time[0]);
+            minutes = Number(this.time[1]);
 
             switch (true) {
                 case this.picoPlacaPlates[0].includes(this.lastDigit):
@@ -63,7 +74,10 @@ class Predictor {
 
             if (this.dontDriveDay) {
                 if (this.inputDay === this.dontDriveDay) {
-                    if (this.time <= 5 || this.time >= 20) {
+                    if (
+                        (hour < this.restrictHours[0][0] || (hour > this.restrictHours[1][0] && minutes > this.restrictHours[1][1])) && 
+                        (hour < this.restrictHours[2][0] || (hour > this.restrictHours[3][0] && minutes > this.restrictHours[3][1]))
+                        ) {
                         return result = 'Great, lets drive';
                     } else {
                         return result = 'Sorry, pico & placa is currently running';
@@ -78,7 +92,7 @@ class Predictor {
     }
 }
 
-const canIDrive = new Predictor('PCF-1728', 'November 11,2020', 12);
+const canIDrive = new Predictor('PCF-1728', 'November 11,2020', '4:00');
 console.log(canIDrive.predict());
 
 module.exports =  {Predictor};
